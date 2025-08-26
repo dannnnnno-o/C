@@ -18,7 +18,10 @@ while(a != 'n'){
         while((emptyChar = getchar()) != '\n' && emptyChar != EOF){/* do nothing because the while loop will run until the input buffer is cleared*/}
 
         // the scanf can now function as intended
-        int y = scanf("%d", &x);
+        int y;
+        if(y = scanf("%d", &x) == 1){
+            break;
+        }
     }
 
     if(x > 0){
@@ -48,6 +51,10 @@ while(a != 'n'){
     }
 
     printf("Do you want to enter another number? (y/n): ");
+
+    int emptyChar2;
+    while((emptyChar2 = getchar()) != '\n' && emptyChar2 != EOF){/* clears the input buffer before taking char input to clear the newline character left by previous scanf */}
+
     scanf(" %c", &a);
 
     while(a != 'y' || a != 'n'){
