@@ -9,7 +9,15 @@ while(a != 'n'){
     printf("Enter a number: ");
     int y = scanf("%d", &x);
     while(y != 1){
-        printf("Enter a number: ");
+        printf("Invalid Input. Please enter a number: ");
+        // the invalid input's EOF ('\n') is in the input buffer --meaning it is not yet cleared for next scanf
+        // if remains uncleared the next scanf would scan the invalid input's EOF ('\n') resulting in an infinite loop of a user not being able to input anything because of the EOF in the input buffer
+
+        // to clear the invalid input's EOF or \n 
+        int emptyChar;
+        while((emptyChar = getchar()) != '\n' && emptyChar != EOF){/* do nothing because the while loop will run until the input buffer is cleared*/}
+
+        // the scanf can now function as intended
         int y = scanf("%d", &x);
     }
 
