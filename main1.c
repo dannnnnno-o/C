@@ -2,7 +2,7 @@
 
 int main(){
 
-char a = 'y';
+char a;
 int x;
 
 while(a != 'n'){
@@ -55,22 +55,28 @@ while(a != 'n'){
     int emptyChar2;
     while((emptyChar2 = getchar()) != '\n' && emptyChar2 != EOF){/* clears the input buffer before taking char input to clear the newline character left by previous scanf */}
 
-    scanf(" %c", &a);
+    scanf("%c", &a);
 
-    while(a != 'y' || a != 'n'){
+    if(a == 'n'){
+    printf("Thank you for using this program.");
+    break;
+    }
+    else if(a == 'y'){
+        continue;
+    }
+    else{
+
+    if(a != 'y' || a != 'n'){
         printf("Invalid input.\n");
+    while(a != 'y' || a != 'n'){
         printf("Do you want to enter another number? (y/n): ");
         scanf(" %c", &a);
         if(a == 'y' || a == 'n'){
             break;
         }
     }
-
-    if(a == 'n'){
-        printf("Thank you for using this program.");
-        break;
     }
-
+}
 }
     return 0;
 }
