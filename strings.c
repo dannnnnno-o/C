@@ -19,9 +19,9 @@ int main(){
 
     //result = strlen(string1);                       // returns the length of a string
     //result = strcmp(string1, string2);              // returns 0 if true, !0 if false
-    
-
-    
+    //result = strncmp(string1, string2, 1)          // compares 'n' amount of characters. returns 0 if true
+    //result = strcmpi(string1, string2)             // compares and ignores type cases. returns 0 if true
+    //result = strnicmp(string1, string2, 1)         // compares 'n' amount of characters, ignores type-cases, returns 0 if true.    
     
     printf("%d", result);
 
