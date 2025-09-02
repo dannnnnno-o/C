@@ -8,10 +8,10 @@ void PrintStr(char *str, int strLen){
     }
 }
 
-void PrintArrStr(char *arr, int length){
+void PrintArrStr(char **arr, int length){
 
-    for(int i = 0; i < length; i++){
-        printf("%s ,", arr[i]);
+    for(int i = 0; i < length - 1; i++){
+        printf("%s\n", arr[i]);
     }
 
 }
@@ -45,9 +45,11 @@ int main(){
         "JavaScript"
     };
 
-    const char **pLanguages = &languages[0];
+    char **pLanguages = languages;
 
-    int languagesLen = sizeof(**languages / *languages[0]);
+    int languagesLen = sizeof(**pLanguages / *languages[0]);
+
+    // printf("%d", languagesLen);
 
     // printf("%d", languagesLen);
     PrintArrStr(pLanguages, languagesLen);
