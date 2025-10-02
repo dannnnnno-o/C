@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "ctrl.h"
+#include "../view/view.h"
+#define limit 16
 
 int no_file(char *filename){
     FILE *file = fopen(filename, "r");
@@ -16,22 +19,60 @@ int no_file(char *filename){
 int landingChoice(){
     int choice;
     scanf("%d", &choice);
-    if(choice >= 1 && choice <= 4){
-        return choice;
-    }
-    else if(choice == 5){
-        printf("Thank you for using Smart Tasker.");
-    }
-    return 0;
+    return choice;
 }
 
 void taskOverview(char *filename){
     FILE *file = fopen(filename, "r");
-
-    int finput = 0;
-    fscanf(file, "%d", &finput);
-    printf("Number: %d\n", finput);
-
     fclose(file);
+}
+
+void make_file(char *file){
+        if(no_file(file)){ // if tasks aren't found, make one.
+        FILE *tmpFile = fopen(file, "w");
+        fclose(tmpFile);
+    }
+}
+
+void nameFormat(char *text, int len){
+    if(len == limit){
+        printf("%s", text);
+    }
+
+    else if(len < limit){
+        printf("%s", text);
+        for(int i = len; i <= limit; i++)
+        printf(" ");
+    }
+
+    else if(len > limit){
+        char newText[limit - 3]; // -3 for ellipses
+        strncpy(newText, text, limit - 4); // -4 for cutting of the last three letters and the null terminator
+        printf("%s...", newText);
+    }
+}
+
+void tagFormat(char *tag, int len){
+    printf("\t\t\t");
+    if(len == limit){
+        printf("%s", tag);
+    }
+
+    else if(len < limit){
+        printf("#%s", tag);
+        for(int i = len; i < limit; i++){
+            printf(" ");
+        }
+    }
+
+    else if (len > limit){
+        char newTag[limit - 3]; // -3 for ellipses
+        strncpy(newTag, tag, limit - 4); // -4 for cutting of the last three letters and null terminator
+        printf("%s...", newTag);
+    }
+}
+
+void deadlineFormat(char *deadline){
+    printf("| %s |\n", deadline);
 }
 
