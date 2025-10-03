@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "view.h"
 #include "../ctrl/ctrl.h"
+#define limit 16
+#define overviewLimit 3
 
 void clear(){system("cls");}
-
 
 void landingPage(){
     printf("Welcome to Smart Tasker.\n");
@@ -21,12 +23,43 @@ void View(int choice){
     
 }
 
-void viewTasks(char *file){
-
-    if(no_file(file)){ // if tasks aren't found, make one.
-        FILE *tmpFile = fopen(file, "w");
-        fclose(tmpFile);
+void viewTasks(char *filename){
+    if(no_file(filename)){
+        make_file(filename);
     }
+
+    FILE *file;
+    file = fopen(filename, "r");
+    char lineBuffer[256];
+    int lineNumber = 1;
+
+    char *line = fgets(lineBuffer, sizeof(lineBuffer), file);
+
+    while(line){
+        printf("%d. ", lineNumber);
+        lineNumber++;
+        char *token = strtok(lineBuffer, ",");
+
+        for(int i = 1; i <= overviewLimit; i++){
+            int tokenLength = strlen(token);
+            switch(i){
+                case 1: /* first index = name */
+                    nameFormat(token, tokenLength);
+                    break;
+                case 2: /* second index = tag */
+                    tagFormat(token, tokenLength);
+                    break;
+                case 3: /* third index = deadline */
+                    deadlineFormat(token);
+            }
+            token = strtok(NULL, ",");
+        }
+        line = fgets(lineBuffer, sizeof(lineBuffer), file); // Read next line
+    }
+    fclose(file);
+
+
+
 /*     printf("Tasks\n");
     printf("1. Cook Dinner           @Personal    #9/17/25\n");
     printf("2. Submit Podcast        @School      #9/18/25\n");

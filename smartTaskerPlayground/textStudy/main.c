@@ -45,13 +45,10 @@ int main(){
                         printf(" ");
                     }
                 }
-                // else if(len == limit1)
                 break;
-                        
+                
                 case 3: printf("| %s |\n", token);
             }
-
-
             //printf("%s ", token);
             token = strtok(NULL, ",");
         }
