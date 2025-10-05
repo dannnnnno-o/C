@@ -3,8 +3,9 @@
 #include <string.h>
 #include "view.h"
 #include "../ctrl/ctrl.h"
-#define limit 16
+#define limit 16 // UI text overflow limit
 #define overviewLimit 3
+#define taskLimit 7
 
 void clear(){system("cls");}
 
@@ -28,13 +29,21 @@ void viewTasks(char *filename){
         make_file(filename);
     }
 
+    int taskCount = countTasks("tasks.txt");
+
+    if(!taskCount){
+        printf("There are no tasks available.");
+    }
+
+    else if(taskCount <= taskLimit){
+    }
+
     FILE *file;
     file = fopen(filename, "r");
-    char lineBuffer[256];
+    char lineBuffer[255];
     int lineNumber = 1;
 
     char *line = fgets(lineBuffer, sizeof(lineBuffer), file);
-
     while(line){
         printf("%d. ", lineNumber);
         lineNumber++;
