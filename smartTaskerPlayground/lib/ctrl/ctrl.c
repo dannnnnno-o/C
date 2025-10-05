@@ -76,3 +76,18 @@ void deadlineFormat(char *deadline){
     printf("| %s |\n", deadline);
 }
 
+int countTasks(char *filename){
+    FILE *file = fopen(filename, "r");
+
+    char lineBuffer[255];
+    
+    char *line = fgets(lineBuffer, sizeof(lineBuffer), file);
+    int taskNumber = 0;
+    while(line){
+        taskNumber++;
+        line = fgets(lineBuffer, sizeof(lineBuffer), file);
+    }
+    fclose(file);
+    return taskNumber;
+}
+

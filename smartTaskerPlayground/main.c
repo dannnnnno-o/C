@@ -4,6 +4,7 @@
 #include "lib/view/view.h"
 
 
+
 int main(){
     landingPage();
 
@@ -20,5 +21,7 @@ int main(){
         case 5: printf("Thank you for using Smark Tasker.\n");
                 exit(0);
     }
+
+
     return 0;
 }

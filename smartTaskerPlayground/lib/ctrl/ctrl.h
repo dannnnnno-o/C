@@ -14,4 +14,8 @@ void nameFormat(char *text, int len);
 void tagFormat(char *tag, int len);
 
 void deadlineFormat(char *deadline);
+
+int countTasks(char *filename);
+
+
 #endif
