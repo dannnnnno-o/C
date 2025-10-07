@@ -87,7 +87,16 @@ int countTasks(char *filename){
         taskNumber++;
         line = fgets(lineBuffer, sizeof(lineBuffer), file);
     }
+
     fclose(file);
     return taskNumber;
+}
+
+void selectTask(char* taskName){
+    FILE *file = fopen(taskName, "r");
+
+
+
+    fclose(file);
 }
 
