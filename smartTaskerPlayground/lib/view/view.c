@@ -36,6 +36,7 @@ void viewTasks(char *filename){
     }
 
     else if(taskCount <= taskLimit){
+
     }
 
     FILE *file;
@@ -53,6 +54,7 @@ void viewTasks(char *filename){
             int tokenLength = strlen(token);
             switch(i){
                 case 1: /* first index = name */
+                    //char* name = token
                     nameFormat(token, tokenLength);
                     break;
                 case 2: /* second index = tag */
@@ -68,15 +70,50 @@ void viewTasks(char *filename){
     fclose(file);
 
 
-
-/*     printf("Tasks\n");
+/*     taskNumber < 7
     printf("1. Cook Dinner           @Personal    #9/17/25\n");
     printf("2. Submit Podcast        @School      #9/18/25\n");
     printf("3. Review for MMW        @School      #9/19/25\n");
-    printf("4. Go Back\n"); */
+    printf("4. Go Back\n");
+*/
+
+/*    taskNumber == 7
+    printf("1. Cook Dinner           @Personal    #9/17/25\n");
+    printf("2. Submit Podcast        @School      #9/18/25\n");
+    printf("3. Review for MMW        @School      #9/19/25\n");
+    printf("4. Submit Podcast        @School      #9/18/25\n");
+    printf("5. Review for MMW        @School      #9/19/25\n");
+    printf("6. Submit Podcast        @School      #9/18/25\n");
+    printf("7. Review for MMW        @School      #9/19/25\n");
+    printf("8. Go Back\n"); 
+*/
+    
+/*      taskNumber > 7 page 1
+    printf("1. Cook Dinner           @Personal    #9/17/25\n");
+    printf("2. Submit Podcast        @School      #9/18/25\n");
+    printf("3. Review for MMW        @School      #9/19/25\n");
+    printf("4. Submit Podcast        @School      #9/18/25\n");
+    printf("5. Review for MMW        @School      #9/19/25\n");
+    printf("6. Submit Podcast        @School      #9/18/25\n");
+    printf("7. Review for MMW        @School      #9/19/25\n");
+    printf("8. Next Page\n"); 
+    printf("9. Go Back\n");  
+*/
+/*      taskNumber > 7 page 2
+    printf("1. Cook Dinner2           @Personal    #9/17/25\n");
+    printf("2. Submit Podcast        @School      #9/18/25\n");
+    printf("3. Review for MMW        @School      #9/19/25\n");
+    printf("4. Submit Podcast        @School      #9/18/25\n");
+    printf("5. Review for MMW        @School      #9/19/25\n");
+    printf("6. Submit Podcast        @School      #9/18/25\n");
+    printf("7. Review for MMW        @School      #9/19/25\n");
+    printf("8. Previous Page\n"); 
+    printf("9. Next Page\n"); 
+    printf("0. Go Back\n");  
+*/
 
     //have an access to reading the tasks.txt to and print an overview to the console.
-    //take in user input to select a certain task, to go the previous, as well as next page.
+    //take in user input to select a certain task, to go to next page, the previous page, as well as the menu.
 }
 
 

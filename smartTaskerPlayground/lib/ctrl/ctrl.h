@@ -17,5 +17,6 @@ void deadlineFormat(char *deadline);
 
 int countTasks(char *filename);
 
+void selectTask(char* taskName);
 
 #endif
