@@ -24,8 +24,11 @@ int main(){
     //e.g.:
 
     
-    // int x = 2;           // declares an int of x with a value of 2
-    // int *pX = &x;       // declares a pointer that points to and stores the address of x 'denoted by &x'
+    int x = 2;           // declares an int of x with a value of 2
+    int* pX = &x;       // declares a pointer that points to and stores the address of x 'denoted by &x'
+    printf("this is the value of the pointer pX: %p\n", pX);
+    printf("this is the value INSIDE the pointer pX: %d", *pX);
+
     // printf("%d", *pX);  // dereferences the pointer address to get the value of that address
    
     // arithmetic operator * has two main uses:
@@ -39,20 +42,20 @@ int main(){
 
     //PrintStr(fruits, fruitsLen);
 
-    char *languages[] = {
-        "C",
-        "Python",
-        "JavaScript"
-    };
+    // char *languages[] = {
+    //     "C",
+    //     "Python",
+    //     "JavaScript"
+    // };
 
-    char **pLanguages = languages;
+    // char **pLanguages = languages;
 
-    int languagesLen = sizeof(**pLanguages / *languages[0]);
-
-    // printf("%d", languagesLen);
+    // int languagesLen = sizeof(**pLanguages / *languages[0]);
 
     // printf("%d", languagesLen);
-    PrintArrStr(pLanguages, languagesLen);
+
+    // printf("%d", languagesLen);
+    // PrintArrStr(pLanguages, languagesLen);
 
 
     return 0;

@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -g
 TARGET = main
-SRC = main.c controller.c
+SRC = lib\controller\controller.c lib\view\view.c lib\mode\mode.c main.c
 OBJ = $(SRC:.c=.o)
 RM = del /Q
 

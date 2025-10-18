@@ -10,7 +10,7 @@ int main(){
         printf("%d\n", i);
     } */
 
-    int i, j;
+/*     int i, j;
     int n = 4;
     
     for (i = 1; i <= n; i++){
@@ -20,7 +20,11 @@ int main(){
             else
             printf(" ");
         }
-        printf("\n");
-    }
+        printf("\n"); 
+    }*/
+
+    int x = 2;
+
+    printf("%d", x < 3);
 return 0;
 }

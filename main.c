@@ -1,11 +1,30 @@
 #include<stdio.h>
 
 int main(){
-    int x;
-    int y = scanf("%d", &x);
+    /* 
 
-    printf("Your X is %d\n", x);
-    printf("Your Y is %d\n", y);
+    &
+    |
+    <<
+    >>
+    ^
+    ~
+
+
+    */
+    // ~1 
+
+    // 10 -> 2
+
+    // ~00000000 +
+    // ~11111111 -
+
+    //
+
+
+    printf("%d",  ~2);
+
+
 
     return 0;
 }

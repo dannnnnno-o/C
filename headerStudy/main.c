@@ -1,8 +1,11 @@
 #include <stdio.h>
-#include "controller.h"
+#include "lib/controller/controller.h"
+#include "lib/view/view.h"
+#include "lib/mode/mode.h"
 
 
 int main(){
-    printsmth();
+
+
     return 0;
 }
