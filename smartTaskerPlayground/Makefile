@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -g
 TARGET = main
-SRC = lib\ctrl\ctrl.c lib\mode\mode.c lib\view\view.c main.c
+SRC = main.c lib\ctrl\ctrl.c lib\view\view.c
 OBJ = $(SRC:.c=.o)
 RM = del /Q
 
