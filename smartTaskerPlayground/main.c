@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include "lib/ctrl/ctrl.h"
-#include "lib/view/view.h"
+#include "ctrl/ctrl.h"
+#include "view/view.h"
 
 
 

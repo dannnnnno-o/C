@@ -77,7 +77,7 @@ void viewTasks(char *filename){
     printf("4. Go Back\n");
 */
 
-/*    taskNumber == 7
+/*      taskNumber == 7
     printf("1. Cook Dinner           @Personal    #9/17/25\n");
     printf("2. Submit Podcast        @School      #9/18/25\n");
     printf("3. Review for MMW        @School      #9/19/25\n");

@@ -1,3 +1,4 @@
+
 gcc: gcc command
 -o: flag (what to do with gcc)
 main: name of the program

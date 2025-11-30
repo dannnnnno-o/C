@@ -1,4 +1,0 @@
-file structure:
-    each tasks has their own txt file
-
-    

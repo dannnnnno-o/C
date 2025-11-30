@@ -1,12 +1,15 @@
 #include <stdio.h>
 
 void PrintArr(int *x, int lengthX){
-
     for(int i = 0; i < lengthX; i++){
         printf("%d, ", *(x + i));
-    }
+    }  
+}
 
-    
+char *printStrings(char *arr[], int elements){
+    for(int i = 0; i < elements; i++){
+        printf("%s\n", arr[i]);
+    }
 }
 
 int main(){
@@ -18,18 +21,20 @@ int main(){
 
     int numsLength = numsSize / elementSize;  // divides total / element to get how much element fits in the total size
 
-    PrintArr(&nums[0], numsLength);
+    // PrintArr(&nums[0], numsLength);
 
 
     //printf("%d", numsLength); // outputs 5 
 
     // end of arrays in int
 
-    char languages[3][20] = {
+    char *languages[] = {
         "C",
         "Python",
         "JavaScript"
     };
+
+    printStrings(languages, 3);
 
     // printf("%s", languages[0]);
 
@@ -40,7 +45,7 @@ int main(){
     int *pX = &x;                // declares a pointer to the address of x 'denoted by &x'
 
 
-    printf("%d", *pX);          //dereferences *pX by using a pointer arithmetic to get the value located in the address and prints it out.
+   //printf("%d", *pX);          //dereferences *pX by using a pointer arithmetic to get the value located in the address and prints it out.
 
 
     return 0;
